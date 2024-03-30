@@ -6,7 +6,7 @@ class Solution {
                 arr[j-1950]++;
             }
         }
-        int x = arr[0];
+        int x = arr[0]; // need to set like this if "if block" is not executed
         int year = 1950;
 
         for(int i = 0; i < 101; i++){
