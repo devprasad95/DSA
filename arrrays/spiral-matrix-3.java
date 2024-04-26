@@ -9,6 +9,7 @@ class Solution {
         while(i < rows *cols){
             if(d == 0 || d == 2){
                 length++;
+                // we can observe that after every 2 direction change no.of steps will increase
             }
             for(int k = 0; k < length; k++){
                 rStart += directions[d];
