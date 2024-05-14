@@ -1,10 +1,11 @@
 class Solution {
     public int[][] spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
         int[][] result = new int[rows * cols][2];
-        int[][] dirs = {{0,1}, {1, 0}, {0, -1}, {-1, 0}};
+        int[][] dirs = {{0,1}, {1, 0}, {0, -1}, {-1, 0}}; //right, top, left, bottom
         int index = 0, d = 0, length = 0;
         while(index < rows * cols){
             if(d == 0 || d == 2){
+                // after 2 direction change steps increases;
                 length++;
             }
             for(int k = 0; k < length; k++){
