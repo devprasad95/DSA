@@ -22,6 +22,7 @@ class Solution {
             int index = Math.abs(nums[i]) - 1;
             if(nums[index] > 0){
                 nums[index] = -1 * nums[index];
+                //here it will beome negative that's we use Math.abs at above code
             }
         }
       //step 3
