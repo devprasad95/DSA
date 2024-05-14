@@ -5,7 +5,7 @@ class Solution {
         int index = 0, d = 0, length = 0;
         while(index < rows * cols){
             if(d == 0 || d == 2){
-                // after 2 direction change steps increases;
+                // after every 2 direction change steps increases;
                 length++;
             }
             for(int k = 0; k < length; k++){
