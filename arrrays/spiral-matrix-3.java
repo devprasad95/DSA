@@ -1,25 +1,21 @@
 class Solution {
     public int[][] spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
-        int[][] matrix = new int[rows * cols][2];
-        int i = 0;
-        matrix[i++] = new int[]{rStart,cStart};
-        int length = 0; 
-        int d = 0;
-        int[] directions = new int[]{0, 1 , 0, -1, 0};
-        while(i < rows *cols){
+        int[][] result = new int[rows * cols][2];
+        int[][] dirs = {{0,1}, {1, 0}, {0, -1}, {-1, 0}};
+        int index = 0, d = 0, length = 0;
+        while(index < rows * cols){
             if(d == 0 || d == 2){
                 length++;
-                // we can observe that after every 2 direction change no.of steps will increase
             }
             for(int k = 0; k < length; k++){
-                rStart += directions[d];
-                cStart += directions[d + 1];
                 if(rStart < rows && rStart >= 0 && cStart < cols && cStart >= 0){
-                    matrix[i++] = new int[]{rStart, cStart};
+                    result[index++] = new int[] {rStart, cStart};
                 }
+                rStart += dirs[d][0];
+                cStart += dirs[d][1];   
             }
-            d = ++d % 4;
-        }
-        return matrix;
+            d = (d + 1) % 4;
+        } 
+        return result;
     }
 }
