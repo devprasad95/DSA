@@ -20,8 +20,6 @@ class Solution {
       //step 2
         for(int i = 0; i < n; i++){
             int index = Math.abs(nums[i]) - 1;
-            //why do we take Math.abs?
-            // Becasue we are making nums[i] as negative value in below code in each iteeration of this looop
             if(nums[index] > 0){
                 nums[index] = -1 * nums[index];
                 
