@@ -6,7 +6,7 @@ class Solution {
             start = Math.max(start, num);
             end += num;
         }
-        while(start < end){
+        while(start <= end){
             // we are same formula of peak index
             int mid = start + (end - start) / 2;
             int sum = 0;
@@ -22,7 +22,7 @@ class Solution {
             if(pieces > k){
                 start = mid + 1;
             } else {
-                end = mid;
+                end = mid - 1;
             }
         }
         return end;
