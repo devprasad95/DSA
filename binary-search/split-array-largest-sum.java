@@ -1,30 +1,33 @@
 class Solution {
     public int splitArray(int[] nums, int k) {
-        int start = 0;
+        int start = nums[0];
         int end = 0;
-        for(int num: nums){
+        for(int num : nums){
             start = Math.max(start, num);
             end += num;
         }
         while(start <= end){
-            // we are same formula of peak index
             int mid = start + (end - start) / 2;
-            int sum = 0;
-            int pieces = 1;
-            for(int num : nums){
-                if(sum + num > mid){
-                    sum = num;
-                    pieces++;
-                } else {
-                    sum += num;
-                }
-            }
-            if(pieces > k){
+            int p = findPartition(nums,mid);
+            if(p > k){
                 start = mid + 1;
             } else {
                 end = mid - 1;
             }
         }
         return start;
+    }
+    public int findPartition(int[] nums, int maxSum){
+        int partitions = 1;
+        int subarraySum = 0;
+        for(int num: nums){
+            if(subarraySum + num > maxSum){
+                subarraySum = num;
+                partitions++;
+            } else {
+                subarraySum += num;   
+            }
+        }
+        return partitions;
     }
 }
