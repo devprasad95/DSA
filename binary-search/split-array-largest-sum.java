@@ -7,6 +7,7 @@ class Solution {
             end += num;
         }
         while(start < end){
+            // we are same formula of peak index
             int mid = start + (end - start) / 2;
             int sum = 0;
             int pieces = 1;
